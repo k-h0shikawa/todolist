@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.todo.todo.domain.mapper.TaskMapper">
+    <select id="selectAll" resultType="com.todo.todo.infrastructure.entity.Task">
+        SELECT 
+            id, 
+            user_id as userId, 
+            title, 
+            description, 
+            status_id as statusId, 
+            due_date as dueDate 
+        FROM TASK
+    </select>
+</mapper>

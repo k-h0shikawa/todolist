@@ -1,0 +1,9 @@
+<configuration>
+    <typeHandlers>
+        <package name="com.todo.todo.handler.LocalDateTimeTypeHandler"/>
+    </typeHandlers>
+    <!-- 下記のmapperパッケージにMybatisで使用するSQLファイルを配置 -->
+    <mappers>
+        <package name="com.todo.todo.domain.mapper"/>
+    </mappers>
+</configuration>
