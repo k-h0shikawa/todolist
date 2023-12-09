@@ -9,4 +9,10 @@ import com.todo.todo.infrastructure.entity.Task;
 @Mapper
 public interface TaskMapper {
 	List<Task> selectAll();
+
+    void insert(Task entity);
+
+	void update(Task entity);
+
+    void deleteById(Integer id);
 }

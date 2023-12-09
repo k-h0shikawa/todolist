@@ -33,4 +33,16 @@ public class TodoController {
     public void insert(@RequestBody TaskModel taskModel){
         service.insert(taskModel);
     }
+
+
+    @PostMapping("update")
+    public void update(@RequestBody TaskModel taskModel){
+        service.update(taskModel);
+    }
+
+    @PostMapping("delete")
+    public void delete(@RequestBody TaskModel taskModel){
+        service.delete(taskModel.getId());
+    }
+
 }
