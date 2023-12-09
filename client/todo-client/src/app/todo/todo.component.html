@@ -1,0 +1,15 @@
+
+<ul class="tasks">
+  <li *ngFor="let task of tasks" (click)="onSelect(task)">
+    <span>{{task.id}}</span> {{task.title}}
+  </li>
+</ul>
+
+<div *ngIf="selectedTask">
+  <div>
+    <label>名前 :
+      <input type="text" [(ngModel)]="selectedTask.title" placeholder="タスク名">
+    </label>
+  </div>
+  <div><span>名前の変更確認：</span>{{selectedTask.title}}</div>
+</div>

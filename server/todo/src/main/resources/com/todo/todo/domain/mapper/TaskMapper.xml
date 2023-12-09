@@ -12,4 +12,38 @@
             due_date as dueDate 
         FROM TASK
     </select>
+
+    <insert id="insert" parameterType="com.todo.todo.infrastructure.entity.Task">
+        INSERT INTO Task(
+            user_id,
+            title,
+            description,
+            status_id,
+            due_date
+        )
+        VALUES(
+            #{userId},
+            #{title},
+            #{description},
+            #{statusId},
+            #{dueDate}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.todo.todo.infrastructure.entity.Task">
+        UPDATE Task
+        SET
+            user_id = #{userId},
+            title = #{title},
+            description = #{description},
+            status_id = #{statusId},
+            due_date = #{dueDate}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        DELETE FROM Task
+        WHERE id = #{id}
+    </delete>
+
 </mapper>
