@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.todo.todo.application.resouce.model.TaskModel;
@@ -22,11 +24,17 @@ public class TodoController {
     private TodoService service;
 
     @GetMapping("")
-    public List<TaskResponse> demo(){
+    public List<TaskResponse> list(){
         var tasks = service.selectAll();
         return tasks.stream()
             .map(TaskResponse::convertDtoToResponse)
             .collect(Collectors.toList());
+    }
+
+    @GetMapping("detail")
+    public TaskResponse detail(@RequestParam Integer taskId){
+        var task = service.select(taskId);
+        return TaskResponse.convertDtoToResponse(task);
     }
 
     @PostMapping("insert")
@@ -41,8 +49,8 @@ public class TodoController {
     }
 
     @PostMapping("delete")
-    public void delete(@RequestBody TaskModel taskModel){
-        service.delete(taskModel.getId());
+    public void delete(@RequestBody Integer taskId){
+        service.delete(taskId);
     }
 
 }

@@ -25,6 +25,10 @@ public class TodoService {
             .collect(Collectors.toList());
     }
 
+    public TaskDto select(Integer id){
+        return TaskDto.convertEntityToDto( mapper.select(id));
+    }
+
     public void insert(TaskModel taskModel) {
         var entity = new Task();
         BeanUtils.copyProperties(taskModel, entity);

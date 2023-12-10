@@ -15,4 +15,6 @@ public interface TaskMapper {
 	void update(Task entity);
 
     void deleteById(Integer id);
+
+    Task select(Integer id);
 }

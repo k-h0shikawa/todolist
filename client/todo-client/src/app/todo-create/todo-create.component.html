@@ -1,0 +1,21 @@
+<div>
+  <label for="id">ID:</label><br>
+  <input id="id" [(ngModel)]="createTask.id" placeholder="id"><br>
+
+  <label for="userId">ユーザーID:</label><br>
+  <input id="userId" [(ngModel)]="createTask.userId" placeholder="userId"><br>
+
+  <label for="title">タイトル:</label><br>
+  <input id="title" [(ngModel)]="createTask.title" placeholder="title"><br>
+
+  <label for="description">説明:</label><br>
+  <input id="description" [(ngModel)]="createTask.description" placeholder="description"><br>
+
+  <label for="statusId">ステータスID:</label><br>
+  <input id="statusId" [(ngModel)]="createTask.statusId" placeholder="statusId"><br>
+
+  <label for="dueDate">期日:</label><br>
+  <input id="dueDateTime" [(ngModel)]="createTask.dueDate" placeholder="dueDateTime" type="datetime-local"><br>
+
+  <button (click)="addTask()">追加</button>
+</div>

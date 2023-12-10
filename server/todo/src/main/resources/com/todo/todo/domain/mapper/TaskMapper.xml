@@ -13,6 +13,18 @@
         FROM TASK
     </select>
 
+    <select id="select" resultType="com.todo.todo.infrastructure.entity.Task">
+        SELECT 
+            id, 
+            user_id as userId, 
+            title, 
+            description, 
+            status_id as statusId, 
+            due_date as dueDate 
+        FROM TASK
+        WHERE id = #{id}
+    </select>
+
     <insert id="insert" parameterType="com.todo.todo.infrastructure.entity.Task">
         INSERT INTO Task(
             user_id,
