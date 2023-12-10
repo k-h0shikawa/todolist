@@ -1,0 +1,21 @@
+<div>
+  <label for="id">ID:</label><br>
+  <input id="id" [(ngModel)]="editTask.id" placeholder="id"><br>
+
+  <label for="userId">ユーザーID:</label><br>
+  <input id="userId" [(ngModel)]="editTask.userId" placeholder="userId"><br>
+
+  <label for="title">タイトル:</label><br>
+  <input id="title" [(ngModel)]="editTask.title" placeholder="title"><br>
+
+  <label for="description">説明:</label><br>
+  <input id="description" [(ngModel)]="editTask.description" placeholder="description"><br>
+
+  <label for="statusId">ステータスID:</label><br>
+  <input id="statusId" [(ngModel)]="editTask.statusId" placeholder="statusId"><br>
+
+  <label for="dueDate">期日:</label><br>
+  <input id="dueDateTime" [(ngModel)]="editTask.dueDate" placeholder="dueDateTime" type="datetime-local"><br>
+
+  <button (click)="updateTask()">更新</button>
+</div>
